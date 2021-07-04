@@ -74,3 +74,8 @@ services:
       - ./snapdump.yml:/home/jobberuser/snapdump.yml:ro
       - ./jobber.yml:/home/jobberuser/.jobber:ro
 ```
+
+# TODO
+
+- Need better passthrough logging from the snapdump command to stdout. The output from jobber
+  puts the jobs stdout into a JSON format which is horrible to read in the docker output.
