@@ -1,0 +1,14 @@
+version: 1.4
+
+resultSinks:
+  - &stdoutSink
+    type: stdout
+    data: [stdout, stderr]
+
+jobs:
+  snapdump:
+    cmd: /home/jobberuser/backup.sh
+    time: 0 * * * * *
+    notifyOnSuccess: [*stdoutSink]
+    notifyOnFailure: [*stdoutSink]
+    notifyOnError: [*stdoutSink]
