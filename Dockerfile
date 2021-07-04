@@ -7,9 +7,11 @@ RUN apk update \
     && apk add py3-pip openssh \
     && rm -rf /var/cache/apk/*
 
-USER jobberuser
+RUN mkdir /mnt/backup \
+    && chown jobberuser:jobberuser /mnt/backup \
+    && chmod 0700 /mnt/backup
 
-RUN mkdir /mnt/backup
+USER jobberuser
 
 VOLUME /mnt/backup
 
