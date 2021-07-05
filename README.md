@@ -6,7 +6,7 @@ Details about snapdump can be found at it's github page here: https://github.com
 # How it works.
 
 This image is based on the jobber docker image from here: https://hub.docker.com/_/jobber.
-Jobber is used to run snapdump on a periodic basis (every minute by default).
+Jobber is used to run snapdump on a periodic basis (every hour by default).
 
 # Usage
 

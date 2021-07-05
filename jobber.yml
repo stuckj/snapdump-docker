@@ -8,7 +8,7 @@ resultSinks:
 jobs:
   snapdump:
     cmd: /home/jobberuser/backup.sh
-    time: 0 * * * * *
+    time: 0 0 * * * *
     notifyOnSuccess: [*stdoutSink]
     notifyOnFailure: [*stdoutSink]
     notifyOnError: [*stdoutSink]
