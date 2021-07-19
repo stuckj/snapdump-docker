@@ -15,7 +15,7 @@ if [ ! -f "${PIDFILE}" ]; then
   /home/jobberuser/.local/bin/snapdump -c /home/jobberuser/snapdump.yml backup &
   PID=${!}
 
-  trap clearPid EXIT
+  trap clearPid EXIT SIGHUP SIGINT SIGQUIT SIGTERM
 
   echo ${PID} > "${PIDFILE}"
 
