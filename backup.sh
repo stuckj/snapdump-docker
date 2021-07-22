@@ -10,7 +10,7 @@ function clearPid() {
   rm -rf "${PIDFILE}"
 }
 
-if [ ! -f "${PIDFILE}" ]; then
+if [ ! -f "${PIDFILE}" ] || [ -z "$(cat ${PIDFILE})" -o ! -e /proc/$(cat ${PIDFILE}) ]; then
 
   /home/jobberuser/.local/bin/snapdump -c /home/jobberuser/snapdump.yml backup &
   PID=${!}
